@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compiler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style type="text/css">
+    <style>
+         *{
+            padding: 0px;
+            margin: 0px;
+         }
+         iframe{
+            width: 100%;
+            height:100%;
+         }
+        /* Your CSS styles here */
+        body{
+            padding: 0px;
+            margin: 0px;
+            /*background-color:#181818;*/
+        }
+        #output-container {
+            width: 100%;
+            min-height:30vh;
+            border: 1px solid black;
+            background-color:white;
+
+        }
+        #output-container iframe{
+            min-height:100vh;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="background-color:#181818;color: white;">
+       <center><h5 class="text-white">A compiler to run HTML,CSS,JAVASCRIPT</h5></center><button onclick="runCode()" class="btn btn-danger" style="float: right;">Run Code</button>
+        <h3 class="text-white-50 mx-1">HTML</h3>
+       <center><textarea id="htmlCode" style="background-color: black; color:white; height:40vh; width:90%; border-radius: 1%;"></textarea></center>
+        <h3 class="text-white-50 mx-1">CSS</h3>
+        <center><textarea id="cssCode" style="background-color: black; color: white; height:40vh; width:90%; border-radius: 1%;"></textarea></center>
+        <h3 class="text-white-50 mx-1">JAVASCRIPT</h3>
+        <center><textarea id="jsCode" style="background-color: black; color: white; height:40vh; width:90%; border-radius:1%;"></textarea></center>
+         <div>
+        <h3 class="text-white-50 mx-1">OUTPUT</h3>
+        <div id="output-container">
+        <!-- Output will be displayed here -->
+        </div>
+        </div>
+    </div>
+
+    
+    <script>
+        function runCode() {
+            const htmlCode = document.getElementById('htmlCode').value;
+            const cssCode = document.getElementById('cssCode').value;
+            const jsCode = document.getElementById('jsCode').value;
+            
+            const outputContainer = document.getElementById('output-container');
+            
+            const iframe = document.createElement('iframe');
+            outputContainer.innerHTML = '';
+            outputContainer.appendChild(iframe);
+            
+            const iframeDocument = iframe.contentDocument;
+            
+            const styleElement = iframeDocument.createElement('style');
+            styleElement.textContent = cssCode;
+            iframeDocument.head.appendChild(styleElement);
+            
+            iframeDocument.body.innerHTML = htmlCode;
+            
+            const scriptElement = iframeDocument.createElement('script');
+            scriptElement.textContent = jsCode;
+            iframeDocument.body.appendChild(scriptElement);
+        }
+    </script>
+    <script type="text/javascript">
+   let x=new Array("<p","<p>","</p>");
+   let y=document.getElementsByTagName("iframe").contentDocument;
+   if (x===y) {
+    document.getElementsByTagName("iframe").contentDocument.style.color="red";
+   }
+
+    </script>
+</body>
+</html>
