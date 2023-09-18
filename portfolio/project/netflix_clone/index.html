@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Netflix</title>
+	<link rel="icon" type="icon" href="img/netflix.png">
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			padding: 0px;
+			margin: 0px;
+			background: linear-gradient( to top ,black,black), url(img/lg.jpg);
+			background-repeat: no-repeat;
+			background-blend-mode:soft-light;
+		    background-size: contain;
+		}
+		#optionh{
+	  	background-color: transparent;
+	  	color: white;
+	  }
+	  .black{
+	  	background-color: black;
+	  }
+	  .close1{
+	  	display:none;
+	  }
+	  .que{
+	  	background-color: #27262c;
+	  	cursor:pointer;
+	  }
+	  .que:hover{
+	  	background-color:#494949;
+	  }
+     .f1{
+     	font-size: 3rem;
+     	font-weight: 900;
+     }
+     .borderh{
+     	border-top: 2vh solid #27262c;
+
+     }
+     .red{
+     	background-color: red;
+     	color: white;
+     }
+     .red:hover{
+     	background-color:#dc3545;
+     	color: white;
+     }
+     .email{
+     	width: 24rem;
+     }
+     .gst{
+     	width: 12rem;
+     }
+	</style>
+	<style type="text/css">
+		@media screen and (max-width: 950px)
+		{
+			.f1{
+     	font-size: 2rem;
+     	font-weight: 700;
+     }
+     .email{
+     	width: 22rem;
+     }
+     .gst{
+     	width: 11rem;
+     }
+		}
+		@media screen and (max-width: 810px){
+		  .sb{
+           font-size: 10px;
+           margin-top:10vh;
+		 }
+		 #optionh{
+		 	font-size: 10px;
+		 	margin-top: 10vh;
+		 }
+		 .email{
+     	width: 16rem;
+     }
+     .gst{
+     	width: 10rem;
+     }
+		}
+		@media screen and (max-width:510px)
+		{
+		 #main1{
+		 	height: 12vh;
+		 	width: 12vh;
+		 }
+		 .one{
+		 	order: 2;
+		 }
+		 .two{
+		 	order: 1;
+		 }
+		 .sb{
+           font-size: 1px;
+           margin-top:3vh;
+		 }
+		 #optionh{
+		 	font-size: 1px;
+		 	margin-top: 3vh;
+		 }
+		 .email{
+      max-width: 10rem;
+     }
+     .gst{
+     	max-width: 7rem;
+     }
+		}
+	</style>
+	
+</head>
+<body>
+  <div class="container-fluid mb-5 img-fluid">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-12">
+  			<nav>
+  				<a class="navbar-brand" href="#"><svg id="main1" viewBox="0 0 111 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="default-ltr-cache-1d568uk ev1dnif1" fill="red" height="27vh" width="27vh"><g><path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"></path></g></svg></a>
+  				 <a href="signIn.html"><button class="btn red my-md-5 mx-1 sb" style="float: right;">Sign In</button></a>
+  				 <select class="btn btn-outline-secondary btn-light my-md-5" id="optionh" style="float: right;">
+
+  					<option class="btn"><i class="fa-regular fa-globe" style="color: #bcc0c7;"></i>English</option>
+  					<option class="btn">Hindi</option>
+  				</select>
+  			</nav>
+  		</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="container-fluid">
+  	<div class="container">
+  		<div class="row mt-5">
+  			<div class="col-md-12">
+  				<center><h1 class="text-white f1" id="text1">The biggest Indian hits. Ready to watch here from ₹ 149.</h1></center>
+  				<center><h2 class="text-white ">Join today. Cancel anytime.</h2></center>
+  				<center><h4 class="text-white">Ready to watch? Enter your email to create or restart your membership.</h4></center>
+  				<center><input type="email" name="" class="btn btn-outline-light email " placeholder="Email Address"><a href="index_content.html"><button class="btn red mx-1 px-md-3 gst">Get Started</button></a></center>
+  			</div>
+        </div>
+    </div>
+  </div>
+
+  
+
+   <div class="container-fluid black mt-5 borderh py-5" id="second">
+  	<div class="container">
+  		<div class="row ">
+  			<div class="col-md-6 text-white py-sm-5 mt-sm-5">
+  			    <h1 class="f1">Enjoy on your  TV</h1>
+  				<h3>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+  			</div>
+  			<div class="col-md-6">
+  				<img src="img/tv.png" class="img-fluid">
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+
+     <div class="container-fluid  black borderh py-5" id="third">
+  	<div class="container">
+  		<div class="row ">
+  			<div class="col-md-6 text-white one">
+  			    <img src="img/mobile.jpg" class="img-fluid">
+  			</div>
+  			<div class="col-md-5 two py-sm-5 mt-sm-5">
+  		    <h1 class="text-white mt-5 f1">Download your shows to watch offline</h1>
+  		    <h4 class="text-white">Save your favourites easily and always have something to watch.</h4>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+
+  <div class="container-fluid black borderh py-5" id="fourth">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-5 text-white py-sm-5 mt-sm-5">
+  			   <h1 class="f1">Watch everywhere</h1>
+  			   <h4>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</h4>
+  			</div>
+  			<div class="col-md-6">
+  		    <img src="img/mac.png" class="img-fluid">
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+    <div class="container-fluid borderh black py-5" id="fifth">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-5 text-white one">
+  			   <img src="img/hild.png" class="img-fluid">
+  			</div>
+  			<div class="col-md-6 two py-sm-5 mt-sm-5">
+  		      <h1 class="text-white f1">Create profiles for kids</h1>
+  		      <h4 class="text-white">Send children on adventures with their favourite characters in a space made just for them—free with your membership.</h4>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  			
+
+    <div class="container-fluid  black py-5 borderh" id="sixth">
+    	<center><h1 class="text-white mb-5">Frequently Asked Questions</h1></center>
+  	<div class="container">
+  		<div class="row my-1 py-md-3 que">
+  			<div class="col-md-12 ">
+
+  				<h3 onclick="show1()" class="text-white">What is Netflix?<svg  style="float: right;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12  close1 text-white" id="q1"><h3>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+
+             You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</h3></div>
+  		</div>
+  	</div>
+  	<div class="container">
+  		<div class="row my-1  py-md-3 que">
+  			<div class="col-md-12">
+  				<h3 onclick="show2()" class="text-white">How much netflix cost?<svg style="float: right;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12 close1 text-white" id="q2"><h3>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</h3></div>
+  		</div>
+  	</div>
+
+
+  	 <div class="container">
+  		<div class="row my-1 que py-md-3">
+  			<div class="col-md-12  ">
+  				<h3 onclick="show3()" class="text-white">Where can i watch?<svg style="float: right;"width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12 close1 text-white" id="q3"><h3>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+
+             You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</h3></div>
+  		</div>
+  	</div>
+
+
+  	<div class="container">
+  		<div class="row my-1 que py-md-3">
+  			<div class="col-md-12 ">
+  				<h3 onclick="show4()" class="text-white">How do i cancel<svg style="float: right;"width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12 close1 text-white" id="q4"><h3>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime..</h3></div>
+  		</div>
+  	</div>
+
+  	<div class="container">
+  		<div class="row my-1 que py-md-3">
+  			<div class="col-md-12 ">
+  				<h3 onclick="show5()" class="text-white">What can i watch on Netflix?<svg style="float: right;"width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12  close1 text-white" id="q5"><h3>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</h3></div>
+  		</div>
+  	</div>
+
+  	  <div class="container">
+  		<div class="row my-1 que py-md-3">
+  			<div class="col-md-12  ">
+  				<h3 onclick="show6()" class="text-white">Is Netflix good for kids?<svg style="float: right;"width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="default-ltr-cache-v1ob21 e164gv2o4" data-name="Plus" alt=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor" ></path></svg></h3>
+  			</div>
+  			<div class="col-md-12 close1  text-white" id="q6"><h3>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.
+
+            Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</h3></div>
+  		</div>
+  	</div>
+  	<div class="container">
+    		<div class="row ">
+    			<div class="col-md-12">
+    				<center><p class="text-white mt-5">Ready to watch? Enter your email to create or restart your membership.</p></center>
+    				<center><input type="email" name="" class="btn btn-outline-light email " placeholder="Email Address"><button class="btn red  gst mx-3 email"><a href="content.html" class="text-white" style="text-decoration: none;">Get Started</a></button></center>
+    			</div>
+    		</div>
+    	</div>
+  </div>	
+    
+
+
+  <div class="container-fluid text-white-50 black py-5" id="third">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col">
+  				<ul style="list-style-type: none;">
+  					<li>Questions? Call 000-800-919-1694</li>
+  					<li>FAQ</li>
+  					<li>Account</li>
+  					<li>Investor Relations</li>
+  					<li>Ways to Watch</li>
+  					<li>Privacy</li>
+  					<li>Corporate Information</li>
+  					<li>Speed Test</li>
+  					<li>Only on Netflix</li>
+  				</ul>
+  				<select class="btn btn-outline-secondary btn-light mx-2"id="optionh">
+  					<option class="btn">English</option>
+  					<option class="btn">Hindi</option>
+  				</select>
+  				<p class="text-white mx-2 my-2">Netflix India</p>
+  			</div>
+  			<div class="col">
+  				<ul style="list-style-type: none;">
+  					<li>Help center</li>
+  					<li>Media center</li>
+  					<li>Jobs</li>
+  					<li>Terms of Use</li>
+  					<li>Contact Us</li>
+  					<li>Legal Notices</li>
+  					
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+    
+
+    <script>
+	function show1(){
+		var x= document.getElementById("q1");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}  
+
+	function show2(){
+		var x= document.getElementById("q2");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}
+	function show3(){
+		var x= document.getElementById("q3");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}
+	function show4(){
+		var x= document.getElementById("q4");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}
+	function show5(){
+		var x= document.getElementById("q5");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}
+	function show6(){
+		var x= document.getElementById("q6");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}else{
+			x.style.display="none";
+		}
+	}
+ </script>		
+</body>
+</html>
